@@ -5,11 +5,13 @@ import 'package:openapi/openapi.dart';
 extension Http on DioException {
   ErrorRes get errorRes {
     final data = response?.data;
-    if (data != null &&
-        data is Map<String, dynamic> &&
-        data.containsKey('code') &&
-        data.containsKey('message')) {
-      return ErrorRes.fromJson(data);
+    if (data != null) {
+      final errorRes = ErrorRes.fromJson(data);
+
+      print(data);
+      print(errorRes);
+
+      return errorRes;
     }
 
     return defaultErrorRes;

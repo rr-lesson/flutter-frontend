@@ -20,3 +20,8 @@ AuthApi authApi(Ref ref) {
   print(ref.read(openApiProvider).dio.options.baseUrl);
   return ref.read(openApiProvider).getAuthApi();
 }
+
+@riverpod
+QuestionApi questionApi(Ref ref) {
+  return ref.read(openApiProvider).getQuestionApi();
+}

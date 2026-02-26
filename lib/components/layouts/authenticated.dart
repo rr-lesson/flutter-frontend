@@ -15,6 +15,7 @@ class AuthenticatedLayout extends HookConsumerWidget {
     ref.listen(refreshTokenProvider, (previous, next) {
       next.whenOrNull(
         data: (status) {
+          print('unauthorized: $status');
           if (status == 401) {
             web.window.localStorage.removeItem('userProfile');
             context.router.replaceAll([LoginRoute()]);

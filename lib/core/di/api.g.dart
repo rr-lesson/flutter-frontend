@@ -90,3 +90,44 @@ final class AuthApiProvider
 }
 
 String _$authApiHash() => r'9eef42c0c0f29365200142fee94d654ef516ea98';
+
+@ProviderFor(questionApi)
+final questionApiProvider = QuestionApiProvider._();
+
+final class QuestionApiProvider
+    extends $FunctionalProvider<QuestionApi, QuestionApi, QuestionApi>
+    with $Provider<QuestionApi> {
+  QuestionApiProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'questionApiProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$questionApiHash();
+
+  @$internal
+  @override
+  $ProviderElement<QuestionApi> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  QuestionApi create(Ref ref) {
+    return questionApi(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(QuestionApi value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<QuestionApi>(value),
+    );
+  }
+}
+
+String _$questionApiHash() => r'26294d5cc7d6c2b30d762b44cca4c8fd17598eb0';
