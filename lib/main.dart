@@ -2,6 +2,7 @@ import 'dart:js_interop';
 import 'dart:ui_web';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_frontend/core/router/app_router.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -28,7 +29,9 @@ void registerViewFactory() {
   });
 }
 
-void main() {
+void main() async {
+  await dotenv.load(fileName: ".env");
+
   setUrlStrategy(PathUrlStrategy());
   ResponsiveSizingConfig.instance.setCustomBreakpoints(
     const ScreenBreakpoints(desktop: 768, tablet: 768, watch: 0),

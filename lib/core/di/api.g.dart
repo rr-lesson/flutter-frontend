@@ -48,7 +48,7 @@ final class OpenApiProvider
   }
 }
 
-String _$openApiHash() => r'7e239e30eaa39a337cb7377d23a4abb6bdba3258';
+String _$openApiHash() => r'54b235f9ce3a09442e66a74d51aa5695ef7535a0';
 
 @ProviderFor(authApi)
 final authApiProvider = AuthApiProvider._();
