@@ -28,7 +28,7 @@ class HomeLayout extends StatelessWidget {
                 destinations: [
                   NavigationDestination(
                     icon: Icon(Icons.dashboard_rounded),
-                    label: "Halaman Utama",
+                    label: "Halaman Utama!",
                   ),
                   NavigationDestination(
                     icon: Icon(Icons.question_answer_rounded),

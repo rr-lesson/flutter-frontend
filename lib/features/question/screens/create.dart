@@ -26,6 +26,7 @@ class _CreateQuestionScreenState extends State<CreateQuestionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         leading: IconButton(
           onPressed: () => context.router.back(),
