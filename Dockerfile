@@ -5,7 +5,7 @@ WORKDIR /app
 COPY pubspec.yaml pubspec.lock ./
 RUN flutter pub get
 
-# RUN echo "VITE_API_BASE_URL=https://api-rr.rizalanggoro.my.id" > .env
+RUN echo "API_BASE_URL=https://api-rr.rizalanggoro.my.id" > .env
 
 COPY . .
 RUN flutter build web --release
